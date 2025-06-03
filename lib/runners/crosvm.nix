@@ -67,10 +67,10 @@ in {
         "-r" storeDisk
       ]
       ++
-      lib.optionals graphics.enable [
-        "--vhost-user-gpu" graphics.socket
-      ]
-      ++
+      # lib.optionals graphics.enable [
+      #   "--vhost-user-gpu" graphics.socket
+      # ]
+      # ++
       lib.optionals (builtins.compareVersions pkgs.crosvm.version "107.1" < 0) [
         # workarounds
         "--seccomp-log-failures"
