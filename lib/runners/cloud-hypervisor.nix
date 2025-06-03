@@ -133,10 +133,7 @@ in {
     then throw "cloud-hypervisor will not change user"
     else lib.escapeShellArgs (
       [
-        (if graphics.enable
-         then "${pkgs.cloud-hypervisor-graphics}/bin/cloud-hypervisor"
-         else "${pkgs.cloud-hypervisor}/bin/cloud-hypervisor"
-        )
+       "${pkgs.cloud-hypervisor}/bin/cloud-hypervisor"
         "--cpus" "boot=${toString vcpu}"
         "--watchdog"
         "--console" "null"
